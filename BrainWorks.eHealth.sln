@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30503.244
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainWorks.eHealth.Console", "BrainWorks.eHealth.Console\BrainWorks.eHealth.Console.csproj", "{804A69C2-A68C-409F-9C55-0984B40E1093}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrainWorks.eHealth.Data", "BrainWorks.eHealth.Data\BrainWorks.eHealth.Data.csproj", "{FDD2B66C-2F72-49D5-8070-7F473EAE3CE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{804A69C2-A68C-409F-9C55-0984B40E1093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{804A69C2-A68C-409F-9C55-0984B40E1093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{804A69C2-A68C-409F-9C55-0984B40E1093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{804A69C2-A68C-409F-9C55-0984B40E1093}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FDD2B66C-2F72-49D5-8070-7F473EAE3CE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FDD2B66C-2F72-49D5-8070-7F473EAE3CE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FDD2B66C-2F72-49D5-8070-7F473EAE3CE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FDD2B66C-2F72-49D5-8070-7F473EAE3CE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0F6A393D-9BE9-474C-8E97-BF650E629567}
+	EndGlobalSection
+EndGlobal

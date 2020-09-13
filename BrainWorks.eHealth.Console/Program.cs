@@ -1,6 +1,6 @@
 ﻿using BrainWorks.eHealth.Data;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace BrainWorks.eHealth.Console
@@ -13,13 +13,32 @@ namespace BrainWorks.eHealth.Console
 			//AddPatients(context);
 			//AddDoctors(context);
 
-			List<Doctor> doctorList = context.Doctors.ToList();
-			foreach (var doctor in doctorList)
-			{
-				AddDoctorDetails(doctor, RandomSpecialization(), "Monday to Friday", "10:00 AM to 5:00 PM", "Room A");
-			}
+			//List<Doctor> doctorList = context.Doctors.ToList();
+			//foreach (var doctor in doctorList)
+			//{
+			//	UpdateDoctorDetails(doctor, RandomSpecialization(), "Monday to Friday", "10:00 AM to 5:00 PM", "Room A");
+			//}
+			//context.SaveChanges();
 
-			context.SaveChanges();
+			//Doctor doctor = context.Doctors.FirstOrDefault(x => x.FirstName == "Doctor 3");
+			//Patient patient = context.Patients.FirstOrDefault(x => x.FirstName == "Patient 1");
+			//DateTime appointmentDate = Convert.ToDateTime("15/09/2020");
+			//AddAppointment(context, doctor, patient, appointmentDate);
+
+			//appointmentDate = Convert.ToDateTime("16/09/2020");
+			//AddAppointment(context, doctor, patient, appointmentDate);
+
+			//appointmentDate = Convert.ToDateTime("17/09/2020");
+			//AddAppointment(context, doctor, patient, appointmentDate);
+
+			//appointmentDate = Convert.ToDateTime("18/09/2020");
+			//AddAppointment(context, doctor, patient, appointmentDate);
+
+			//List<Patient> patients = context.Patients.Include;
+
+			var patients = context.Patients.Include(x => x.Appointments).ToList();
+
+
 		}
 
 		private static void AddPatients(HealthContext context)
@@ -96,12 +115,24 @@ namespace BrainWorks.eHealth.Console
 			context.SaveChanges();
 		}
 
-		private static void AddDoctorDetails(Doctor doctor, string specialization, string daysAvailable, string timings, string roomName)
+		private static void UpdateDoctorDetails(Doctor doctor, string specialization, string daysAvailable, string timings, string roomName)
 		{
 			doctor.Specialization = specialization;
 			doctor.DaysAvailable = daysAvailable;
 			doctor.Timings = timings;
 			doctor.RoomName = roomName;
+		}
+
+		private static void AddAppointment(HealthContext context, Doctor doctor, Patient patient, DateTime appointmentDate)
+		{
+			Appointment appointment = new Appointment();
+			appointment.DoctorId = doctor.Id;
+			appointment.PatientId = patient.Id;
+			appointment.AppointmentDate = appointmentDate;
+			appointment.Status = "Confirmed";
+
+			context.Appointments.Add(appointment);
+			context.SaveChanges();
 		}
 
 		private static string RandomSpecialization()
